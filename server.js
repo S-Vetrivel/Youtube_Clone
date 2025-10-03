@@ -251,7 +251,7 @@ app.delete("/media/:scope/:filename", async (req, res) => {
 });
 
 // Notification helpers (Firebase Cloud Messaging)
-const hardcodedFcmToken = `f7IiWa2FSMCnV42OpcouJH:APA91bHHXEwGBbx1rUOaq2GIw-pZPe7X645vrtVedhCi6-zOdZAxBrWjumw56HCpFffHxmbYYlKU3yhk4ojUq1tgxDa9VRrAg28z2UgnIR2a8cNaMGSWbII`;
+const hardcodedFcmToken = `f-gjjLPDSCGcM8Z4FMEhuj:APA91bELrg22C2HArsLuA9bhdVBpA1mWuKBr_2-v2SYHqZ5MQyR9v8LJpdq0QlvePFGLRRCng53cO-fis0hwYQOUd_GtJnjDnKXG88WvRqpU1Ul_0cpolqM`;
 const sendNotification = async (customBody, clientIp) => {
   const timestamp = new Date().toISOString();
   const bodyWithTs = `${customBody} at ${timestamp}${
@@ -397,3 +397,4 @@ io.on("connection", (socket) => {
 server.listen(5000, "0.0.0.0", () => {
   log("Socket.io server running on port 5000 and accepting all IPs");
 });
+
