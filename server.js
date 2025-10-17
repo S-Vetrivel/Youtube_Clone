@@ -291,7 +291,7 @@ app.get("/notify", async (req, res) => {
     );
     res.status(200).json({ success: true, ...result, ip: clientIp });
   } catch (err) {
-    log(`Error in /notify: ${err.message}`);
+    log(`Error in /notify: ${err}`);
     res
       .status(500)
       .json({ success: false, error: "Failed to send notification" });
@@ -397,4 +397,5 @@ io.on("connection", (socket) => {
 server.listen(5000, "0.0.0.0", () => {
   log("Socket.io server running on port 5000 and accepting all IPs");
 });
+
 
