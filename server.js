@@ -151,6 +151,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
 // Health check
 app.get("/", (req, res) => res.status(200).send("OK"));
+app.get("/health", (req, res) => res.status(200).json({ status: "UP", timestamp: new Date().toISOString() }));
 
 // Utility to list media files in a directory
 async function getMediaFiles(dir, baseUrlPath) {
